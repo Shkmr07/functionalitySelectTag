@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Tag With Funcationality</title>
+</head>
+<body style="text-align: center; display: flex; flex-direction: column; gap: 10px;align-items: center;">
+    <h1 style="text-decoration: underline;">Image Shown As Per User Select The Option</h1>
+    <select id="animal">
+        <option value="Dog">Dog</option>
+        <option value="Cat">Cat</option>
+        <option value="Elephant">Elephant</option>
+        <option value="Lion">Lion</option>
+    </select>
+    <img id="image" style="width: 500px;" src="https://media.istockphoto.com/id/1551607933/photo/golden-retriever-dog-doing-trick.webp?a=1&b=1&s=612x612&w=0&k=20&c=byk_Y_YbHMogFPONrIGfm2cUGRhlW0WoY9tarGhsPek=" alt="Animal Image">
+
+    <script>
+
+        let animal = document.getElementById('animal')
+        let image = document.getElementById('image')
+        
+        animal.addEventListener('change',()=>{
+
+            let dog = 'https://media.istockphoto.com/id/1551607933/photo/golden-retriever-dog-doing-trick.webp?a=1&b=1&s=612x612&w=0&k=20&c=byk_Y_YbHMogFPONrIGfm2cUGRhlW0WoY9tarGhsPek='
+            let cat = 'https://media.istockphoto.com/id/858701710/photo/fluffy-gray-kitten-of-a-russian-blue-cat.webp?a=1&b=1&s=612x612&w=0&k=20&c=u_c9IcKbDdEkUXQmlFN7lY4O_PiGvDQBgL2Dw4F5NUU='
+            let elephant = 'https://media.istockphoto.com/id/1164391494/photo/elephant-in-rainforest.webp?a=1&b=1&s=612x612&w=0&k=20&c=QufWOMit4IMizUu9jIkPN26IH5UccI-Ekc07Kgzw-Ls='
+            let lion = 'https://media.istockphoto.com/id/93216996/photo/lion-panthera-leo.webp?a=1&b=1&s=612x612&w=0&k=20&c=puuPtWXhw-hnT8nHSzQ9KxA6HRj4K7iFJfvOThF5Qxc='
+            
+            image.src = animal.value === 'Cat'?cat:animal.value === 'Elephant'?elephant:animal.value === 'Lion'?lion:dog
+            
+        })
+
+    </script>
+</body>
+</html>
